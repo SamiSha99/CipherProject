@@ -55,8 +55,12 @@ function deCipher() {
     txt = new Uint8Array(fr.result); //works for Vernam Cipher
     key = inputKey;
 
-
-    // vernamCipher();
-    columnarDecipher();
+    if (document.getElementById("vernam").checked == true) {
+      vernamCipher();
+    } else if (document.getElementById("columnar").checked == true) {
+      columnarCipher();
+    } else if (document.getElementById("mono").checked == true) {
+      document.getElementById("output").innerHTML = "Mono-Alphabetic is a work in progress, choose something else."
+    }
   }, 1000);
 }
