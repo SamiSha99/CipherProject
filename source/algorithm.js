@@ -58,7 +58,7 @@ function deCipher() {
     if (document.getElementById("vernam").checked == true) {
       vernamCipher();
     } else if (document.getElementById("columnar").checked == true) {
-      columnarCipher();
+      columnarDecipher();
     } else if (document.getElementById("mono").checked == true) {
       document.getElementById("output").innerHTML = "Mono-Alphabetic is a work in progress, choose something else."
     }
