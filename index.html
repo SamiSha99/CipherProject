@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>File Cipher</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" type="text/css" href=".\assets\style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+</head>
+
+<body>
+  <div class=table>
+    <div>
+      <div class="inputFile">
+        <input type="file" multiple id="input" />
+        <div class="inputKey">
+          <p class="inputKeyElement">Key:</p><input class="inputKeyElement" type="text" id="key" />
+        </div>
+      </div>
+      <div>
+        <input type="button" onclick="cipher()" value="Cipher!" />
+        <input type="button" onclick="deCipher()" value="Decipher!" />
+      </div>
+      <form>
+        <input type="radio" name="Cipher" id="vernam" value="Vernam"> Vernam
+        <input type="radio" name="Cipher" id="columnar" value="Columnar"> Columnar
+        <input type="radio" name="Cipher" id="mono" value="Mono-Alphabetic"> Mono-Alphabetic
+      </form>
+      <br/>
+      <p style="font-size:18px" id="output"></p>
+    </div>
+  </div>
+
+
+  <script src="source/columnar.js"></script>
+  <script src="source/vernam.js"></script>
+  <script src="source/mono.js"></script>
+  <script src="source/algorithm.js"></script>
+  <script src="source/checkInput.js"></script>
+</body>
+
+</html>
