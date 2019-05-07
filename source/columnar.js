@@ -5,8 +5,7 @@ function columnarCipher() {
     0: [], //Uint8Array as chars
     1: [], //Arrays every nth based on Key Length
     2: [], //Horizontal Ordering Result
-    3: [], //Uint8Array of the Cipher
-    4: []
+    3: [] //Uint8Array of the Cipher
   }
 
   for (i = 0; i < txt.length; i++) c[0] += String.fromCharCode(txt[i]);
