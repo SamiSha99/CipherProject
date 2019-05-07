@@ -17,15 +17,15 @@
           <p class="inputKeyElement">Key:</p><input class="inputKeyElement" type="text" id="key" />
         </div>
       </div>
-      <div>
-        <input type="button" onclick="cipher()" value="Cipher!" />
-        <input type="button" onclick="deCipher()" value="Decipher!" />
-      </div>
       <form>
         <input type="radio" name="Cipher" id="vernam" value="Vernam"> Vernam
         <input type="radio" name="Cipher" id="columnar" value="Columnar"> Columnar
         <input type="radio" name="Cipher" id="mono" value="Mono-Alphabetic"> Mono-Alphabetic
       </form>
+      <div>
+        <input type="button" onclick="cipher()" value="Encrypt" />
+        <input type="button" onclick="deCipher()" value="Decrypt" />
+      </div>
       <br/>
       <p style="font-size:18px" id="output"></p>
     </div>
