@@ -27,7 +27,7 @@ function columnarCipher() {
     new Blob([], {
       type: fileType[f]
     }),
-    new Uint8Array(v[2])
+    new Uint8Array(c[3])
   ];
 
   if (fileName[f].substr(fileName[f].length - 4, fileName[f].length) === ".enc") {
@@ -86,7 +86,7 @@ function columnarDecipher() {
     new Blob([], {
       type: fileType[f]
     }),
-    new Uint8Array(v[2])
+    new Uint8Array(c[4])
   ];
 
   if (fileName[f].substr(fileName[f].length - 4, fileName[f].length) === ".enc") {
