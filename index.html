@@ -5,14 +5,13 @@
   <title>File Cipher</title>
   <meta charset='utf-8'>
   <link rel="stylesheet" type="text/css" href=".\assets\style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 </head>
 
 <body>
   <div class=table>
     <div>
       <div class="inputFile">
-        <input type="file" multiple id="input" />
+        <input type="file" id="input" multiple />
         <div class="inputKey">
           <p class="inputKeyElement">Key:</p><input class="inputKeyElement" type="text" id="key" />
         </div>
@@ -24,7 +23,7 @@
       </form>
       <div>
         <input type="button" id="encrypt" onclick="cipher()" value="Encrypt" />
-        <input type="button" id="decrypt" onclick="cipher()" value="Decrypt" />
+        <input type="button" id="decrypt" onclick="deCipher()" value="Decrypt" />
       </div>
       <br />
       <p style="font-size:18px" id="output"></p>
