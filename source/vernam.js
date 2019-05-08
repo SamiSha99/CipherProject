@@ -1,5 +1,3 @@
-var file = [];
-
 function vernamCipher() {
 
   v = {
@@ -23,28 +21,6 @@ function vernamCipher() {
   v[1] = v[1].split(" ").map(Number).slice(0, -1);
 
   for (i = 0; i < v[0].length; i++) v[2].push(v[0][i] ^ v[1][i]);
-  var parts = [
-    new Blob([], {
-      type: fileType[f]
-    }),
-    new Uint8Array(v[2])
-  ];
 
-  if (fileName[f].substr(fileName[f].length - 4, fileName[f].length) === ".enc") {
-    file[f] = new File(parts, fileName[f].substr(0, fileName[f].length - 4));
-  } else {
-    file[f] = new File(parts, fileName[f] + '.enc');
-  }
-
-  fr = new FileReader();
-  fr.readAsArrayBuffer(file[f]);
-
-  console.log(parts);
-  if(f === 0){
-  document.getElementById("output").innerHTML = "<br>Download <a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + file[f].name + "</a>"
-  } else {
-  document.getElementById("output").innerHTML += ", <a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + file[f].name + "</a>"
-  }
-
-  console.log("ENCRYPTION WAS SUCCESSFUL");
+  writeFileVernam();
 }

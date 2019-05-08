@@ -23,10 +23,10 @@
         <input type="radio" name="Cipher" id="mono" value="Mono-Alphabetic"> Mono-Alphabetic
       </form>
       <div>
-        <input type="button" onclick="cipher()" value="Encrypt" />
-        <input type="button" onclick="deCipher()" value="Decrypt" />
+        <input type="button" id="encrypt" onclick="cipher()" value="Encrypt" />
+        <input type="button" id="decrypt" onclick="cipher()" value="Decrypt" />
       </div>
-      <br/>
+      <br />
       <p style="font-size:18px" id="output"></p>
     </div>
   </div>
@@ -37,6 +37,7 @@
   <script src="source/mono.js"></script>
   <script src="source/algorithm.js"></script>
   <script src="source/checkInput.js"></script>
+  <script src="source/writeFile.js"></script>
 </body>
 
 </html>

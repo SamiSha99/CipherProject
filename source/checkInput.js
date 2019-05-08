@@ -27,7 +27,7 @@ function checkInput() {
 
   if (hasFile || hasKey || checkRadio != "") {
     document.getElementById("output").innerHTML = "Sorry but we cannot operate, it looks like you missed:" + hasFile + hasKey + checkRadio;
-    throw "Error, the following are missing:\n" + errFile + errKey + errRadio;
+    throw "Error: The following are missing:\n" + errFile + errKey + errRadio;
   } else {
     return document.getElementById("output").innerHTML = "";
   }
