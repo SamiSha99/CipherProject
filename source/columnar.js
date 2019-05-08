@@ -8,7 +8,7 @@ function columnarCipher() {
     3: [] //Uint8Array of the Cipher
   }
 
-  for (i = 0; i < txt.length; i++) c[0] += String.fromCharCode(txt[i]);
+  for (i = 0; i < data.length; i++) c[0] += String.fromCharCode(data[i]);
 
   c[1] = c[0].match(new RegExp('[\\s\\S]{1,' + key.length + '}', 'g') || []);
 
@@ -60,10 +60,10 @@ function columnarDecipher() {
     4: [], //Uint8Array of the Decipher.
   }
 
-  for (i = 0; i < txt.length; i++) c[0] += String.fromCharCode(txt[i]);
+  for (i = 0; i < data.length; i++) c[0] += String.fromCharCode(data[i]);
 
-  arraySize = Math.trunc(txt.length / key.length);
-  leftOvers = txt.length % key.length;
+  arraySize = Math.trunc(data.length / key.length);
+  leftOvers = data.length % key.length;
 
   for (i = 0; i < key.length; i++) c[1][i] = arraySize;
   for (i = 0; i < leftOvers; i++) c[1][i] += 1;
