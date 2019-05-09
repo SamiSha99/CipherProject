@@ -22,6 +22,7 @@ function cipher() {
     console.log("Name: " + consoleLog_fileName + ", Type: " + fileType[f] + ", Size: " + (fileSize[f] / Math.pow(1024, 2)).toFixed(2) + "MB");
     setTimeout(1000);
   }
+
   setTimeout(function() {
     for (f = 0; f < input.files.length; f++) {
       data = new Uint8Array(fr[f].result);
@@ -32,7 +33,7 @@ function cipher() {
       } else if (document.getElementById("columnar").checked == true) {
         columnarCipher();
       } else if (document.getElementById("mono").checked == true) {
-        document.getElementById("output").innerHTML = "Mono-Alphabetic is a work in progress, choose something else."
+        monoCipher();
       }
     }
   }, 1000);
@@ -72,7 +73,7 @@ function deCipher() {
       } else if (document.getElementById("columnar").checked == true) {
         columnarDecipher();
       } else if (document.getElementById("mono").checked == true) {
-        document.getElementById("output").innerHTML = "Mono-Alphabetic is a work in progress, choose something else."
+        monoDecipher();
       }
     }
   }, 1000);
