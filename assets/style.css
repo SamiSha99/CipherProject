@@ -1,11 +1,22 @@
+body {
+  background-color: #44bb99;
+}
+
 * {
   margin: 0;
   font-size: 24px
 }
 
+.title{
+  display: table;
+  margin: 20px auto;
+  font-size:72px;
+  color: white;
+}
+
 .table {
   display: table;
-  margin: 2.5% auto 0px auto;
+  margin: 15px auto 15px auto;
   font-size: 1.5em;
   border: 5px solid black;
 }
