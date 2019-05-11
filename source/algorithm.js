@@ -2,7 +2,8 @@ function cipher() {
   checkInput();
   document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
   var inputKey = document.getElementById("key").value.toString();
-
+  encryptIsPressed = true;
+  
   var fr = [];
   file = [];
   fileName = [];
@@ -43,6 +44,7 @@ function deCipher() {
   checkInput();
   document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
   var inputKey = document.getElementById("key").value.toString();
+  encryptIsPressed = false;
 
   var fr = [];
   file = [];
@@ -73,7 +75,7 @@ function deCipher() {
       } else if (document.getElementById("columnar").checked == true) {
         columnarDecipher();
       } else if (document.getElementById("mono").checked == true) {
-        monoDecipher();
+        monoCipher();
       }
     }
   }, 1000);
