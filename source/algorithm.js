@@ -3,7 +3,7 @@ function cipher() {
   document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
   var inputKey = document.getElementById("key").value.toString();
   encryptIsPressed = true;
-  
+
   var fr = [];
   file = [];
   fileName = [];
@@ -18,9 +18,9 @@ function cipher() {
     consoleLog_fileName = input.files[f].name;
     fileName[f] = (input.files[f].name).replace(/ /g, "_");
     fileType[f] = input.files[f].type;
-    fileSize[f] = input.files[f].size;
+    fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
-    console.log("Name: " + consoleLog_fileName + ", Type: " + fileType[f] + ", Size: " + (fileSize[f] / Math.pow(1024, 2)).toFixed(2) + "MB");
+    console.log("Name: " + consoleLog_fileName + ", Type: " + fileType[f] + ", Size: " + fileSize[f]);
     setTimeout(1000);
   }
 
@@ -60,9 +60,9 @@ function deCipher() {
     consoleLog_fileName = input.files[f].name;
     fileName[f] = (input.files[f].name).replace(/ /g, "_");
     fileType[f] = input.files[f].type;
-    fileSize[f] = input.files[f].size;
+    fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
-    console.log("Name: " + consoleLog_fileName + ", Type: " + fileType[f] + ", Size: " + (fileSize[f] / Math.pow(1024, 2)).toFixed(2) + "MB");
+    console.log("Name: " + consoleLog_fileName + ", Type: " + fileType[f] + ", Size: " + fileSize[f]);
     setTimeout(1000);
   }
   setTimeout(function() {
