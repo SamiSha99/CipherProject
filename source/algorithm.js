@@ -7,6 +7,7 @@ function cipher() {
   var fr = [];
   file = [];
   fileName = [];
+  fileTitle = [];
   fileType = [];
   fileSize = [];
 
@@ -16,6 +17,7 @@ function cipher() {
     fr[f].readAsArrayBuffer(input.files[f]);
 
     fileName[f] = (input.files[f].name).replace(/ /g, "_");
+    fileTitle[f] = (input.files[f].name).replace(/\.[^/.]+$/, "");
     fileType[f] = input.files[f].type;
     fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
@@ -47,6 +49,7 @@ function deCipher() {
   var fr = [];
   file = [];
   fileName = [];
+  fileTitle = [];
   fileType = [];
   fileSize = [];
 
@@ -55,8 +58,8 @@ function deCipher() {
     fr[f] = new FileReader(file);
     fr[f].readAsArrayBuffer(input.files[f]);
 
-    consoleLog_fileName = input.files[f].name;
     fileName[f] = (input.files[f].name).replace(/ /g, "_");
+    fileTitle[f] = (input.files[f].name).replace(/\.[^/.]+$/, "");
     fileType[f] = input.files[f].type;
     fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
