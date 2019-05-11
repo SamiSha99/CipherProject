@@ -14,9 +14,6 @@ function vernamCipher() {
   for (i = 0; i < leftOvers; i++) newKey += key[i];
   for (i = 0; i < data.length; i++) v[1] += newKey[i].charCodeAt() + " ";
 
-
-  // console.log("charCodeAt Passed...")
-
   v[0] = v[0].split(",").map(Number);
   v[1] = v[1].split(" ").map(Number).slice(0, -1);
 
