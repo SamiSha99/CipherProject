@@ -25,6 +25,10 @@ function checkInput() {
     checkRadio = "";
   }
 
+  if(document.getElementById("columnar").checked == true && document.getElementById("key").value.length == 1){
+    throw document.getElementById("output").innerHTML = "Columnar Cipher cannot work with 1 length Key!"
+  }
+
   if (hasFile || hasKey || checkRadio != "") {
     document.getElementById("output").innerHTML = "Sorry but we cannot operate, it looks like you missed:" + hasFile + hasKey + checkRadio;
     throw "Error: The following are missing:\n" + errFile + errKey + errRadio;

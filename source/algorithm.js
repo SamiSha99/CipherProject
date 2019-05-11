@@ -7,7 +7,6 @@ function cipher() {
   var fr = [];
   file = [];
   fileName = [];
-  fileNameHTML = []
   fileType = [];
   fileSize = [];
 
@@ -17,11 +16,9 @@ function cipher() {
     fr[f].readAsArrayBuffer(input.files[f]);
 
     fileName[f] = (input.files[f].name).replace(/ /g, "_");
-    fileNameHTML[f] = input.files[f].name;
     fileType[f] = input.files[f].type;
     fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
-    console.log("Name: " + fileNameHTML[f] + ", Type: " + fileType[f] + ", Size: " + fileSize[f]);
     setTimeout(1000);
   }
 
@@ -63,7 +60,6 @@ function deCipher() {
     fileType[f] = input.files[f].type;
     fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
-    console.log("Name: " + consoleLog_fileName + ", Type: " + fileType[f] + ", Size: " + fileSize[f]);
     setTimeout(1000);
   }
   setTimeout(function() {

@@ -58,11 +58,6 @@ function writeFileData() {
 }
 
 function innerHTMLResult() {
-  // if (f === 0) {
-  //   document.getElementById("output").innerHTML = "<br>Download <a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + file[f].name + "</a>"
-  // } else {
-  //   document.getElementById("output").innerHTML += ", <a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + file[f].name + "</a>"
-  // }
   if (f === 0) {
     document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id=" + "result-rows" + "><tr><td>" + fileName[f] + "</td><td>" + fileType[f] + "</td><td>" + fileSize[f] + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
   } else if (f > 0) {
