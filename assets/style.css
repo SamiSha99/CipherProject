@@ -14,12 +14,11 @@ td, th {
   font-size: 18px;
 }
 
-th{
+th {
   background-color: #3CB371;
 }
 
 table {
-
   border-collapse: collapse;
   width: 100%;
 }
@@ -48,12 +47,16 @@ tr:nth-child(even) {
   width: 750px;
 }
 
-.inputFile {
-  ;
+.alignURL {
+  text-align: center;
 }
 
 .inputKey {
   display: flex;
+}
+
+.button {
+  
 }
 
 .inputKeyElement {
