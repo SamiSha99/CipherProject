@@ -25,8 +25,14 @@ function checkInput() {
     checkRadio = "";
   }
 
-  if(document.getElementById("columnar").checked == true && document.getElementById("key").value.length == 1){
+  if (document.getElementById("columnar").checked == true && document.getElementById("key").value.length == 1) {
     throw document.getElementById("output").innerHTML = "Columnar Cipher cannot work with 1 length Key!"
+  }
+
+  for (i = 0; i < input.files.length; i++) {
+    if (encryptIsPressed == false && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) != ".enc") {
+      throw document.getElementById("output").innerHTML = "The following file(s) that were added are not Encrypted!"
+    }
   }
 
   if (hasFile || hasKey || checkRadio != "") {

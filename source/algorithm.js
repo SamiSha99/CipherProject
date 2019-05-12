@@ -1,15 +1,11 @@
 function cipher() {
+  encryptIsPressed = true;
   checkInput();
   document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
   var inputKey = document.getElementById("key").value.toString();
-  encryptIsPressed = true;
 
   var fr = [];
-  file = [];
-  fileName = [];
-  fileTitle = [];
-  fileType = [];
-  fileSize = [];
+  file = [], fileName = [], fileTitle = [], fileType = [], fileSize = [];
 
   for (f = 0; f < input.files.length; f++) {
 
@@ -41,17 +37,13 @@ function cipher() {
 }
 
 function deCipher() {
+  encryptIsPressed = false;
   checkInput();
   document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
   var inputKey = document.getElementById("key").value.toString();
-  encryptIsPressed = false;
 
   var fr = [];
-  file = [];
-  fileName = [];
-  fileTitle = [];
-  fileType = [];
-  fileSize = [];
+  file = [], fileName = [], fileTitle = [], fileType = [], fileSize = [];
 
   for (f = 0; f < input.files.length; f++) {
 
