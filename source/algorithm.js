@@ -74,11 +74,11 @@ function readFileProp() {
 
     fileName = (input.files[f].name).replace(/ /g, "_");
     fileTitle = (input.files[f].name).replace(/\.[^/.]+$/, "");
-    if (input.files[f].name.substr(input.files[f].name.length - 4, input.files[f].name.length) != ".enc"){
-    fileType = input.files[f].type;
-  } else{
-    fileType = "N/A"
-  }
+    if (input.files[f].name.substr(input.files[f].name.length - 4, input.files[f].name.length) != ".enc") {
+      fileType = input.files[f].type;
+    } else {
+      fileType = "N/A"
+    }
     fileSize = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
 
     fileProp.push({
@@ -89,5 +89,17 @@ function readFileProp() {
     });
 
     setTimeout(1000);
+  }
+}
+
+function downloadAll(input){
+  for (i = 0; i < f; i++) {
+    url = window.URL.createObjectURL(file[i])
+    input.href = url;
+    input.target = '_blank';
+
+  	// target filename
+    input.download = file[i].name
+
   }
 }

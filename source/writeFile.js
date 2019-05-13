@@ -59,10 +59,11 @@ function writeFileData() {
 
 function innerHTMLResult() {
   if (f === 0) {
-    document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
-  } else if (0 < f < input.files.length - 1) {
-    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
+    document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td title='" + fileProp[f].title + "'>" + fileProp[f].title + "</td><td title='" + fileProp[f].type + "'>" + fileProp[f].type + "</td><td title='" + fileProp[f].size + "'>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
+  } else if (0 < f && f < input.files.length - 1) {
+    document.getElementById("result-rows").innerHTML += "<tr><td title='" + fileProp[f].title + "'>" + fileProp[f].title + "</td><td title='" + fileProp[f].type + "'>" + fileProp[f].type + "</td><td title='" + fileProp[f].size + "'>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
   } else if (f == input.files.length - 1) {
-    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
+    document.getElementById("result-rows").innerHTML += "<tr><td title='" + fileProp[f].title + "'>" + fileProp[f].title + "</td><td title='" + fileProp[f].type + "'>" + fileProp[f].type + "</td><td title='" + fileProp[f].size + "'>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
+    // document.getElementById("output").innerHTML += '<input type="button" id="downloadAll" onclick="downloadAll(event)" value="Download All" />'
   }
 }
