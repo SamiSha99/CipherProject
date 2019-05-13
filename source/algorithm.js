@@ -5,17 +5,25 @@ function cipher() {
   var inputKey = document.getElementById("key").value.toString();
 
   var fr = [];
-  file = [], fileName = [], fileTitle = [], fileType = [], fileSize = [];
+  file = [], fileProp = [];
 
   for (f = 0; f < input.files.length; f++) {
 
     fr[f] = new FileReader(file);
     fr[f].readAsArrayBuffer(input.files[f]);
 
-    fileName[f] = (input.files[f].name).replace(/ /g, "_");
-    fileTitle[f] = (input.files[f].name).replace(/\.[^/.]+$/, "");
-    fileType[f] = input.files[f].type;
-    fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
+
+    fileName = (input.files[f].name).replace(/ /g, "_");
+    fileTitle = (input.files[f].name).replace(/\.[^/.]+$/, "");
+    fileType = input.files[f].type;
+    fileSize = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
+
+    fileProp.push({
+      name: fileName,
+      title: fileTitle,
+      type: fileType,
+      size: fileSize
+    });
 
     setTimeout(1000);
   }
@@ -43,17 +51,25 @@ function deCipher() {
   var inputKey = document.getElementById("key").value.toString();
 
   var fr = [];
-  file = [], fileName = [], fileTitle = [], fileType = [], fileSize = [];
+  file = [], fileProp = [];
 
   for (f = 0; f < input.files.length; f++) {
 
     fr[f] = new FileReader(file);
     fr[f].readAsArrayBuffer(input.files[f]);
 
-    fileName[f] = (input.files[f].name).replace(/ /g, "_");
-    fileTitle[f] = (input.files[f].name).replace(/\.[^/.]+$/, "");
-    fileType[f] = input.files[f].type;
-    fileSize[f] = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
+
+    fileName = (input.files[f].name).replace(/ /g, "_");
+    fileTitle = (input.files[f].name).replace(/\.[^/.]+$/, "");
+    fileType = input.files[f].type;
+    fileSize = (input.files[f].size / Math.pow(1024, 2)).toFixed(2).toString() + "MB";
+
+    fileProp.push({
+      name: fileName,
+      title: fileTitle,
+      type: fileType,
+      size: fileSize
+    });
 
     setTimeout(1000);
   }

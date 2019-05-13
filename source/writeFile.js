@@ -1,7 +1,7 @@
 function writeFileVernam() {
   parts = [
     new Blob([], {
-      type: fileType[f]
+      type: fileProp[f].type
     }),
     new Uint8Array(v[2])
   ];
@@ -13,7 +13,7 @@ function writeFileVernam() {
 function writeFileColumnarEncrypt() {
   parts = [
     new Blob([], {
-      type: fileType[f]
+      type: fileProp[f].type
     }),
     new Uint8Array(c[3])
   ];
@@ -25,7 +25,7 @@ function writeFileColumnarEncrypt() {
 function writeFileColumnarDecrypt() {
   parts = [
     new Blob([], {
-      type: fileType[f]
+      type: fileProp[f].type
     }),
     new Uint8Array(c[4])
   ];
@@ -37,7 +37,7 @@ function writeFileColumnarDecrypt() {
 function writeFileMono() {
   parts = [
     new Blob([], {
-      type: fileType[f]
+      type: fileProp[f].type
     }),
     new Uint8Array(m[3])
   ];
@@ -48,9 +48,9 @@ function writeFileMono() {
 
 function writeFileData() {
   if (encryptIsPressed == true) {
-    file[f] = new File(parts, fileName[f] + '.enc');
+    file[f] = new File(parts, fileProp[f].name + '.enc');
   } else {
-    file[f] = new File(parts, fileName[f].substr(0, fileName[f].length - 4));
+    file[f] = new File(parts, fileProp[f].name.substr(0, fileProp[f].name.length - 4));
   }
 
   fr = new FileReader();
@@ -59,10 +59,10 @@ function writeFileData() {
 
 function innerHTMLResult() {
   if (f === 0) {
-    document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td>" + fileTitle[f] + "</td><td>" + fileType[f] + "</td><td>" + fileSize[f] + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
+    document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
   } else if (0 < f < input.files.length - 1) {
-    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileTitle[f] + "</td><td>" + fileType[f] + "</td><td>" + fileSize[f] + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
+    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
   } else if (f == input.files.length - 1) {
-    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileTitle[f] + "</td><td>" + fileType[f] + "</td><td>" + fileSize[f] + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
+    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
   }
 }
