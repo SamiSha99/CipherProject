@@ -39,7 +39,7 @@ function writeFileMono() {
     new Blob([], {
       type: fileProp[f].type
     }),
-    new Uint8Array(m[3])
+    new Uint8Array(m[4])
   ];
 
   writeFileData();
@@ -59,10 +59,10 @@ function writeFileData() {
 
 function innerHTMLResult() {
   if (f === 0) {
-    document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
+    document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
   } else if (0 < f < input.files.length - 1) {
-    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
+    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
   } else if (f == input.files.length - 1) {
-    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td class='alignURL'>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
+    document.getElementById("result-rows").innerHTML += "<tr><td>" + fileProp[f].title + "</td><td>" + fileProp[f].type + "</td><td>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
   }
 }
