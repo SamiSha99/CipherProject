@@ -91,15 +91,3 @@ function readFileProp() {
     setTimeout(1000);
   }
 }
-
-// function downloadAll(input){
-//   for (i = 0; i < f; i++) {
-//     url = window.URL.createObjectURL(file[i])
-//     input.href = url;
-//     input.target = '_blank';
-//
-//   	// target filename
-//     input.download = file[i].name
-//
-//   }
-// }

@@ -64,6 +64,5 @@ function innerHTMLResult() {
     document.getElementById("result-rows").innerHTML += "<tr><td title='" + fileProp[f].title + "'>" + fileProp[f].title + "</td><td title='" + fileProp[f].type + "'>" + fileProp[f].type + "</td><td title='" + fileProp[f].size + "'>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr>"
   } else if (f == input.files.length - 1) {
     document.getElementById("result-rows").innerHTML += "<tr><td title='" + fileProp[f].title + "'>" + fileProp[f].title + "</td><td title='" + fileProp[f].type + "'>" + fileProp[f].type + "</td><td title='" + fileProp[f].size + "'>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody></table>"
-    // document.getElementById("output").innerHTML += '<input type="button" id="downloadAll" onclick="downloadAll(event)" value="Download All" />'
   }
 }
