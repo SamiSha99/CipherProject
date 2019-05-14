@@ -14,8 +14,9 @@
 
   <div class=table>
     <div>
-      <div class="inputFile">
-        <input type="file" id="input" multiple />
+      <div>
+        <input class="inputFile" name="file" type="file" id="input" oninput="fileInput()" multiple />
+        <label for="input" id="fileInput">Choose a file...</label>
         <div class="inputKey">
           <p class="inputKeyElement">Key:</p><input class="inputKeyElement" type="text" id="key" />
         </div>

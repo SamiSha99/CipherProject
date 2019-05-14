@@ -1,3 +1,24 @@
+function fileInput() {
+
+  title = "";
+
+  if (input.files.length == 0) {
+    document.getElementById("fileInput").innerHTML = 'Choose a file...';
+  } else if (input.files.length == 1) {
+    title = input.files[0].name;
+    document.getElementById("fileInput").innerHTML = "<p title='" + title + "'>" + input.files[0].name + "</p>";
+  } else {
+    for (i = 0; i < input.files.length; i++) {
+      if (i < input.files.length - 1) {
+        title += (i + 1) + ") " + input.files[i].name + "\n";
+      } else {
+        title += (i + 1) + ") " + input.files[i].name;
+      }
+    }
+    document.getElementById("fileInput").innerHTML = "<p title='" + title + "'>" + input.files.length + " Files</p>";
+  }
+}
+
 function checkInput() {
 
   hasFile = hasKey = checkRadio = errFile = errKey = errRadio = "";

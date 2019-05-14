@@ -21,15 +21,15 @@ tr:nth-child(even) {
   background-color: #3CB371;
 }
 
-tr>th:nth-child(1),tr>td:nth-child(1){
+tr>th:nth-child(1), tr>td:nth-child(1) {
   text-align: left;
-  width:55%;
+  width: 55%;
   text-overflow: ellipsis;
 }
 
-tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4){
+tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4) {
   text-align: center;
-  width:15%;
+  width: 15%;
   text-overflow: ellipsis;
 }
 
@@ -37,7 +37,6 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4){
   text-align: center;
   width: 20%;
 } */
-
 .title {
   display: table;
   margin: 20px auto;
@@ -58,6 +57,33 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4){
   width: 600px;
 }
 
+.inputFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: table;
+  margin: 15px auto;
+  padding: 5px;
+}
+
+label:hover {
+  background-color: red;
+}
+
+label {
+  cursor: pointer;
+}
+
 .inputKey {
   display: flex;
 }
@@ -66,6 +92,7 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4){
 
 .inputKeyElement {
   padding-right: 0.3125em;
+  display: table;
 }
 
 /* ANIMATIONS */
