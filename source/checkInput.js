@@ -47,12 +47,12 @@ function checkInput() {
   }
 
   if (document.getElementById("columnar").checked == true && document.getElementById("key").value.length == 1) {
-    throw document.getElementById("output").innerHTML = "Columnar Cipher cannot work with 1 length Key!"
+    throw document.getElementById("log").innerHTML = "Columnar Cipher cannot work with 1 length Key!"
   }
 
   for (i = 0; i < input.files.length; i++) {
     if (encryptIsPressed == false && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) != ".enc") {
-      throw document.getElementById("output").innerHTML = "The following file(s) that were added are not Encrypted!"
+      throw document.getElementById("log").innerHTML = "The following file(s) that were added are not Encrypted!"
     }
   }
 
@@ -60,7 +60,7 @@ function checkInput() {
     document.getElementById("output").innerHTML = "Sorry but we cannot operate, it looks like you missed:" + hasFile + hasKey + checkRadio;
     throw "Error: The following are missing:\n" + errFile + errKey + errRadio;
   } else {
-    return document.getElementById("output").innerHTML = "";
+    return document.getElementById("log").innerHTML = "";
   }
 
 }

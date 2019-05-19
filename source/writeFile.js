@@ -1,3 +1,5 @@
+var tmpStr = "";
+
 function writeFileVernam() {
   parts = [
     new Blob([], {
@@ -58,6 +60,8 @@ function writeFileData() {
 }
 
 function innerHTMLResult() {
+  document.getElementById("log").innerHTML = "";
+
   if (f === 0) {
     document.getElementById("output").innerHTML = "<table><tr><th>Name</th><th>Type</th><th>Size</th><th>Download</th></tr><tbody id='result-rows'><tr><td title='" + fileProp[f].title + "'>" + fileProp[f].title + "</td><td title='" + fileProp[f].type + "'>" + fileProp[f].type + "</td><td title='" + fileProp[f].size + "'>" + fileProp[f].size + "</td><td>" + "<a href=" + URL.createObjectURL(file[f]) + " download=" + file[f].name + ">" + "Link" + "</a>" + "</td></tr></tbody>"
   } else if (0 < f && f < input.files.length - 1) {

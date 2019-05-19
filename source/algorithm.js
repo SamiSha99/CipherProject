@@ -1,7 +1,7 @@
 function cipher() {
   encryptIsPressed = true;
   checkInput();
-  document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
+  document.getElementById("log").innerHTML = "<div class='img'><img src=\"./assets/images/Ripple-2s-200px.gif\"></div>";
   var inputKey = document.getElementById("key").value.toString();
 
   var fr = [];
@@ -35,7 +35,7 @@ function cipher() {
 function deCipher() {
   encryptIsPressed = false;
   checkInput();
-  document.getElementById("output").innerHTML = "<br><img src=\"./assets/images/Ripple-2s-200px.gif\">";
+  document.getElementById("log").innerHTML = "<div class='img'><img src=\"./assets/images/Ripple-2s-200px.gif\"></div>";
   var inputKey = document.getElementById("key").value.toString();
 
   var fr = [];
