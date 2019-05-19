@@ -8,13 +8,14 @@ A project focuses on encrypting files with 3 different ways:
 * Columnar Cipher
 * Mono-Alphabetic Cipher
 
-To do so, follow these steps:
+## How?
 
 1) Add your files.
 2) Write down an encryption key.
 3) Select which cipher you want to encrypt your files with.
 4) Download the files. Enjoy! 😎
 
-## Note❗
+## Tips!
 
-You can use some of the files in the Samples folder found in this Repository for testing.
+1) You can use some of the files in the Samples folder found in this Repository for testing.
+2) You can insert multiple files and encrypt them with a specific cipher option.
