@@ -6,7 +6,7 @@ function fileInput() {
     document.getElementById("fileInput").innerHTML = 'Choose a file...';
   } else if (input.files.length == 1) {
     title = input.files[0].name;
-    document.getElementById("fileInput").innerHTML = "<p title='" + title + "'>" + input.files[0].name + "</p>";
+    document.getElementById("fileInput").innerHTML = "<span title='" + title + "'>" + input.files[0].name + "</soan>";
   } else {
     for (i = 0; i < input.files.length; i++) {
       if (i < input.files.length - 1) {
@@ -15,7 +15,7 @@ function fileInput() {
         title += (i + 1) + ") " + input.files[i].name;
       }
     }
-    document.getElementById("fileInput").innerHTML = "<p title='" + title + "'>" + input.files.length + " Files</p>";
+    document.getElementById("fileInput").innerHTML = "<span title='" + title + "'>" + input.files.length + " Files</span>";
   }
 }
 
