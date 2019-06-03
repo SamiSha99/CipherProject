@@ -19,7 +19,10 @@ function vernamCipher() {
 
   for (i = 0; i < v[0].length; i++) v[2].push(v[0][i] ^ v[1][i]);
 
-  writeFileVernam();
+  bits = v[2];
+
+  // writeFileVernam();
+  writeFile();
 }
 
 function columnarCipher() {
@@ -47,7 +50,10 @@ function columnarCipher() {
 
   c[3] = c[3].split(" ").map(Number).slice(0, -1);
 
-  writeFileColumnarEncrypt();
+  bits = c[3];
+
+  // writeFileColumnarEncrypt();
+  writeFile();
 }
 
 
@@ -83,7 +89,10 @@ function columnarDecipher() {
 
   c[4] = c[3].split(" ").map(Number).slice(0, -2);
 
-  writeFileColumnarDecrypt();
+  bits = c[4];
+
+  // writeFileColumnarDecrypt();
+  writeFile();
 }
 
 function monoCipher() {
@@ -122,5 +131,8 @@ function monoCipher() {
 
   m[4] = m[4].split(" ").map(Number).slice(0, -1);
 
-  writeFileMono();
+  bits = m[4];
+
+  // writeFileMono();
+  writeFile();
 }

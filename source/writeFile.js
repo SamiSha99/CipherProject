@@ -1,47 +1,11 @@
 var tmpStr = "";
 
-function writeFileVernam() {
+function writeFile() {
   parts = [
     new Blob([], {
       type: fileProp[f].type
     }),
-    new Uint8Array(v[2])
-  ];
-
-  writeFileData();
-  innerHTMLResult();
-}
-
-function writeFileColumnarEncrypt() {
-  parts = [
-    new Blob([], {
-      type: fileProp[f].type
-    }),
-    new Uint8Array(c[3])
-  ];
-
-  writeFileData();
-  innerHTMLResult();
-}
-
-function writeFileColumnarDecrypt() {
-  parts = [
-    new Blob([], {
-      type: fileProp[f].type
-    }),
-    new Uint8Array(c[4])
-  ];
-
-  writeFileData();
-  innerHTMLResult();
-}
-
-function writeFileMono() {
-  parts = [
-    new Blob([], {
-      type: fileProp[f].type
-    }),
-    new Uint8Array(m[4])
+    new Uint8Array(bits)
   ];
 
   writeFileData();
