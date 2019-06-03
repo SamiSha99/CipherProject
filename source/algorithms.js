@@ -1,4 +1,4 @@
-function vernamCipher() {
+function vernam() {
 
   v = {
     0: [], // Uint8Array
@@ -21,7 +21,6 @@ function vernamCipher() {
 
   bits = v[2];
 
-  // writeFileVernam();
   writeFile();
 }
 
@@ -52,7 +51,6 @@ function columnarCipher() {
 
   bits = c[3];
 
-  // writeFileColumnarEncrypt();
   writeFile();
 }
 
@@ -91,11 +89,10 @@ function columnarDecipher() {
 
   bits = c[4];
 
-  // writeFileColumnarDecrypt();
   writeFile();
 }
 
-function monoCipher() {
+function mono() {
 
   newKey = "";
 
@@ -133,6 +130,5 @@ function monoCipher() {
 
   bits = m[4];
 
-  // writeFileMono();
   writeFile();
 }

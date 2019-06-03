@@ -22,11 +22,11 @@ function cipher() {
       key = inputKey;
 
       if (document.getElementById("vernam").checked == true) {
-        vernamCipher();
+        vernam();
       } else if (document.getElementById("columnar").checked == true) {
         columnarCipher();
       } else if (document.getElementById("mono").checked == true) {
-        monoCipher();
+        mono();
       }
     }
   }, 1000);
@@ -56,11 +56,11 @@ function deCipher() {
       key = inputKey;
 
       if (document.getElementById("vernam").checked == true) {
-        vernamCipher();
+        vernam();
       } else if (document.getElementById("columnar").checked == true) {
         columnarDecipher();
       } else if (document.getElementById("mono").checked == true) {
-        monoCipher();
+        mono();
       }
     }
   }, 1000);
