@@ -118,11 +118,11 @@ function mono() {
 
   m[2] = newKey + m[2];
 
-  if (encryptIsPressed == true) {
+  if (encryptIsPressed)
     for (i = 0; i < data.length; i++) m[3] += m[2].charAt(m[1].indexOf(m[0][i]));
-  } else {
+  else
     for (i = 0; i < data.length; i++) m[3] += m[1].charAt(m[2].indexOf(m[0][i]));
-  }
+
 
   for (i = 0; i < m[3].length; i++) m[4] += m[3].charCodeAt(i) + " ";
 

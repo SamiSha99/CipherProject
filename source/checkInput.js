@@ -6,7 +6,7 @@ function fileInput() {
     document.getElementById("fileInput").innerHTML = 'Choose a file...';
   } else if (input.files.length == 1) {
     title = input.files[0].name;
-    document.getElementById("fileInput").innerHTML = "<span title='" + title + "'>" + input.files[0].name + "</soan>";
+    document.getElementById("fileInput").innerHTML = "<span title='" + title + "'>" + input.files[0].name + "</span>";
   } else {
     for (i = 0; i < input.files.length; i++) {
       if (i < input.files.length - 1) {
@@ -51,7 +51,13 @@ function checkInput() {
   }
 
   for (i = 0; i < input.files.length; i++) {
-    if (encryptIsPressed == false && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) != ".enc") {
+    if (encryptIsPressed && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) == ".enc") {
+      throw document.getElementById("log").innerHTML = "You cannot encrypt a file that is already encrypted!"
+    }
+  }
+
+  for (i = 0; i < input.files.length; i++) {
+    if (!encryptIsPressed && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) != ".enc") {
       throw document.getElementById("log").innerHTML = "The following file(s) that were added are not Encrypted!"
     }
   }

@@ -1,6 +1,12 @@
-function cipher() {
-  encryptIsPressed = true;
+function cipher(btn) {
+
+  if (btn.id == "encrypt")
+    encryptIsPressed = true;
+  else
+    encryptIsPressed = false;
+
   checkInput();
+  
   document.getElementById("log").innerHTML = "<div class='img'><img src=\"./assets/images/Ripple-2s-200px.gif\"></div>";
   var inputKey = document.getElementById("key").value.toString();
 
@@ -21,47 +27,15 @@ function cipher() {
       data = new Uint8Array(fr[f].result);
       key = inputKey;
 
-      if (document.getElementById("vernam").checked == true) {
+      if (document.getElementById("vernam").checked == true)
         vernam();
-      } else if (document.getElementById("columnar").checked == true) {
+      else if (encryptIsPressed && document.getElementById("columnar").checked == true)
         columnarCipher();
-      } else if (document.getElementById("mono").checked == true) {
-        mono();
-      }
-    }
-  }, 1000);
-}
-
-function deCipher() {
-  encryptIsPressed = false;
-  checkInput();
-  document.getElementById("log").innerHTML = "<div class='img'><img src=\"./assets/images/Ripple-2s-200px.gif\"></div>";
-  var inputKey = document.getElementById("key").value.toString();
-
-  var fr = [];
-  file = [];
-
-  for (f = 0; f < input.files.length; f++) {
-
-    fr[f] = new FileReader(file);
-    fr[f].readAsArrayBuffer(input.files[f]);
-
-  }
-
-  readFileProp();
-
-  setTimeout(function() {
-    for (f = 0; f < input.files.length; f++) {
-      data = new Uint8Array(fr[f].result);
-      key = inputKey;
-
-      if (document.getElementById("vernam").checked == true) {
-        vernam();
-      } else if (document.getElementById("columnar").checked == true) {
+      else if (!encryptIsPressed && document.getElementById("columnar").checked == true)
         columnarDecipher();
-      } else if (document.getElementById("mono").checked == true) {
+      else if (document.getElementById("mono").checked == true)
         mono();
-      }
+
     }
   }, 1000);
 }
@@ -73,7 +47,7 @@ function readFileProp() {
   for (f = 0; f < input.files.length; f++) {
 
     fileName = (input.files[f].name).replace(/ /g, "_");
-    fileTitle = (input.files[f].name).replace(/\.[^/.]+$/, "");
+    fileTitle = (fileName).replace(/\.[^/.]+$/, "");
     if (input.files[f].name.substr(input.files[f].name.length - 4, input.files[f].name.length) != ".enc") {
       fileType = input.files[f].type;
     } else {
