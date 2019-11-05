@@ -1,5 +1,3 @@
-var tmpStr = "";
-
 function writeFile() {
   parts = [
     new Blob([], {
