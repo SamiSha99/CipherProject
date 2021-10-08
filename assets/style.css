@@ -1,6 +1,7 @@
 body {
   background-color: #44bb99;
   font-family: arial, sans-serif;
+  height: 100vh;
 }
 
 * {
@@ -9,7 +10,7 @@ body {
 }
 
 th {
-  background-color: #3CB371;
+  background-color: #3CB371; 
 }
 
 table {
@@ -17,8 +18,14 @@ table {
   width: 100%;
 }
 
+hr {
+  width: 95%;
+  margin: 10px 0;
+  border: solid 5px forestgreen;
+}
+
 tr:nth-child(even) {
-  background-color: #3CB371;
+  background-color: #3cb37286;
 }
 
 tr>th:nth-child(1), tr>td:nth-child(1) {
@@ -33,26 +40,36 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4) {
   text-overflow: ellipsis;
 }
 
-/* tr>th:nth-child(4), tr>td:nth-child(4) {
-  text-align: center;
-  width: 20%;
-} */
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  background-color: ghostwhite;
+  width: 98%;
+  top: 5%;
+  left: 1%;
+  height: 90%;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+}
+
 .title {
-  display: table;
-  margin: 20px auto;
+  
+  margin: 15px 0px 15px 20px;
   font-size: 72px;
-  color: white;
+  color: forestgreen;
 }
 
 .table {
   display: table;
-  margin: 15px auto 15px auto;
+  margin: 15px 0px 15px 20px;
   font-size: 1.5em;
 }
 
 .output {
   display: table;
-  margin: 15px auto 15px auto;
+  margin: 15px 0px 15px 20px;
   width: 600px;
 }
 
@@ -135,10 +152,6 @@ label:active {
 
 /* ANIMATIONS */
 table, tr, th, td, tbody, thead {
-  -webkit-animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -ms-animation: fadein 2s;
-  -o-animation: fadein 2s;
   animation-name: fadein;
   animation-duration: 1s;
   text-align: left;
