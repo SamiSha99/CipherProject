@@ -13,27 +13,30 @@ function cipher(btn) {
 
   for (f = 0; f < input.files.length; f++) {
     fr[f] = new FileReader(file);
+    fr[f].onloadend = function () {
+      for(i = 0; i < input.files.length; i++)
+        if(fr[i] == undefined || fr[i].readyState != 2) return; // make sure all of them are ready!!!
+
+      for (f = 0; f < input.files.length; f++) {
+        data = new Uint8Array(fr[f].result);
+        key = inputKey;
+  
+        if (document.getElementById("vernam").checked)
+          vernam();
+        else if (encryptIsPressed && document.getElementById("columnar").checked)
+          columnarCipher();
+        else if (!encryptIsPressed && document.getElementById("columnar").checked)
+          columnarDecipher();
+        else if (document.getElementById("mono").checked)
+          mono();
+  
+      }
+    }
     fr[f].readAsArrayBuffer(input.files[f]);
   }
 
   readFileProp();
-
-  setTimeout(function () {
-    for (f = 0; f < input.files.length; f++) {
-      data = new Uint8Array(fr[f].result);
-      key = inputKey;
-
-      if (document.getElementById("vernam").checked)
-        vernam();
-      else if (encryptIsPressed && document.getElementById("columnar").checked)
-        columnarCipher();
-      else if (!encryptIsPressed && document.getElementById("columnar").checked)
-        columnarDecipher();
-      else if (document.getElementById("mono").checked)
-        mono();
-
-    }
-  }, 1000);
+  
 }
 
 function readFileProp() {
