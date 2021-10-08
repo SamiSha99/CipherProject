@@ -21,52 +21,40 @@ function fileInput() {
 
 function checkInput() {
 
-  hasFile = hasKey = checkRadio = errFile = errKey = errRadio = "";
+  let strHTML = strError = "", log = document.getElementById("log");
 
-  if (document.getElementById("input").value === "") {
-    hasFile = "<li>File</li>";
-    errFile = "* File\n";
-  } else {
-    hasFile = "";
-  }
+  log.innerHTML = "";
 
-  if (!document.getElementById("key").value) {
-    hasKey = "<li>Key</li>";
-    errKey = "* Key\n"
-  } else {
-    hasKey = "";
-  }
-
-  if (document.getElementById("vernam").checked == false &&
-    document.getElementById("columnar").checked == false &&
-    document.getElementById("mono").checked == false) {
-    checkRadio = "<li>Cipher Option</li>";
-    errRadio = "* Cipher Option"
-  } else {
-    checkRadio = "";
-  }
-
-  if (document.getElementById("columnar").checked == true && document.getElementById("key").value.length == 1) {
-    throw document.getElementById("log").innerHTML = "Columnar Cipher cannot work with 1 length Key!"
-  }
-
-  for (i = 0; i < input.files.length; i++) {
+  for (i = 0; i < input.files.length; i++)
     if (encryptIsPressed && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) == ".enc") {
-      throw document.getElementById("log").innerHTML = "You cannot encrypt a file that is already encrypted!"
+      log.innerHTML = "You cannot encrypt a file that is already encrypted!";
+      return false;
     }
-  }
 
-  for (i = 0; i < input.files.length; i++) {
+  for (i = 0; i < input.files.length; i++)
     if (!encryptIsPressed && input.files[i].name.substr(input.files[i].name.length - 4, input.files[i].name.length) != ".enc") {
-      throw document.getElementById("log").innerHTML = "The following file(s) that were added are not Encrypted!"
+      log.innerHTML = "The following file(s) that were added are not Encrypted!";
+      return false;
     }
+
+  if (document.getElementById("columnar").checked && document.getElementById("key").value.length == 1) {
+    log.innerHTML = "Columnar Cipher cannot work with 1 length Key!";
+    return false;
   }
 
-  if (hasFile || hasKey || checkRadio != "") {
-    document.getElementById("log").innerHTML = "<span style='color:red'>Sorry but we cannot operate, it looks like you missed: <ul>" + hasFile + hasKey + checkRadio + "</ul></span>";
-    throw "Error: The following are missing:\n" + errFile + errKey + errRadio;
-  } else {
-    return document.getElementById("log").innerHTML = "";
-  }
+  if (document.getElementById("input").value === "")
+    strHTML += "<li>File</li>";
 
+  if (!document.getElementById("key").value)
+    strHTML += "<li>Key</li>";
+
+  if (!document.getElementById("vernam").checked && !document.getElementById("columnar").checked && !document.getElementById("mono").checked)
+    strHTML += "<li>Cipher Option</li>";
+
+  if (strHTML != "") {
+    log.innerHTML = "<span style='color:red'>Sorry but we cannot operate, it looks like you missed: <ul>" + strHTML + "</ul></span>";
+    return false;
+  }
+  
+  return true;
 }

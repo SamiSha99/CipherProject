@@ -1,12 +1,10 @@
 function cipher(btn) {
 
-  if (btn.id == "encrypt")
-    encryptIsPressed = true;
-  else
-    encryptIsPressed = false;
+  encryptIsPressed = btn.id == "encrypt";
 
-  checkInput();
-  
+  // Inputs are invalid, don't run.
+  if(!checkInput()) return;
+
   document.getElementById("log").innerHTML = "<div class='img'><img src=\"./assets/images/Ripple-2s-200px.gif\"></div>";
   var inputKey = document.getElementById("key").value.toString();
 
@@ -14,26 +12,24 @@ function cipher(btn) {
   file = [];
 
   for (f = 0; f < input.files.length; f++) {
-
     fr[f] = new FileReader(file);
     fr[f].readAsArrayBuffer(input.files[f]);
-
   }
 
   readFileProp();
 
-  setTimeout(function() {
+  setTimeout(function () {
     for (f = 0; f < input.files.length; f++) {
       data = new Uint8Array(fr[f].result);
       key = inputKey;
 
-      if (document.getElementById("vernam").checked == true)
+      if (document.getElementById("vernam").checked)
         vernam();
-      else if (encryptIsPressed && document.getElementById("columnar").checked == true)
+      else if (encryptIsPressed && document.getElementById("columnar").checked)
         columnarCipher();
-      else if (!encryptIsPressed && document.getElementById("columnar").checked == true)
+      else if (!encryptIsPressed && document.getElementById("columnar").checked)
         columnarDecipher();
-      else if (document.getElementById("mono").checked == true)
+      else if (document.getElementById("mono").checked)
         mono();
 
     }

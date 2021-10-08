@@ -38,12 +38,9 @@ function columnarCipher() {
 
   c[1] = c[0].match(new RegExp('[\\s\\S]{1,' + key.length + '}', 'g') || []);
 
-  for (i = 0; i < c[2].length; i++) console.log(c[1][i] + ' Length of ' + c[1][i].length);
-
-  for (i = 0; i < key.length; i++) {
-    for (u = 0; u < c[1].length; u++) c[2] += c[1][u].charAt(i);
-
-  }
+  for (i = 0; i < key.length; i++)
+    for (u = 0; u < c[1].length; u++) 
+      c[2] += c[1][u].charAt(i);
 
   for (i = 0; i < c[2].length; i++) c[3] += c[2].charCodeAt(i) + " ";
 
@@ -79,11 +76,9 @@ function columnarDecipher() {
     c[0] = c[0].substring(c[1][i], c[0].length);
   }
 
-  for (i = 0; i < c[1][0]; i++) {
-    for (u = 0; u < key.length; u++) {
+  for (i = 0; i < c[1][0]; i++)
+    for (u = 0; u < key.length; u++) 
       c[3] += c[2][u].charCodeAt(i) + " ";
-    }
-  }
 
   c[4] = c[3].split(" ").map(Number).slice(0, -2);
 
@@ -114,17 +109,16 @@ function mono() {
     m[2] += String.fromCharCode(i);
   }
 
-  for (i = 0; i < newKey.length; i++) m[2] = m[2].split(newKey[i]).join("");
+  for (i = 0; i < newKey.length; i++) 
+    m[2] = m[2].split(newKey[i]).join("");
 
   m[2] = newKey + m[2];
 
-  if (encryptIsPressed)
-    for (i = 0; i < data.length; i++) m[3] += m[2].charAt(m[1].indexOf(m[0][i]));
-  else
-    for (i = 0; i < data.length; i++) m[3] += m[1].charAt(m[2].indexOf(m[0][i]));
+  for (i = 0; i < data.length; i++) 
+    m[3] += encryptIsPressed ? m[2].charAt(m[1].indexOf(m[0][i])) : m[1].charAt(m[2].indexOf(m[0][i]));
 
-
-  for (i = 0; i < m[3].length; i++) m[4] += m[3].charCodeAt(i) + " ";
+  for (i = 0; i < m[3].length; i++) 
+    m[4] += m[3].charCodeAt(i) + " ";
 
   m[4] = m[4].split(" ").map(Number).slice(0, -1);
 
