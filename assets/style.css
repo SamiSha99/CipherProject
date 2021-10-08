@@ -11,6 +11,7 @@ body {
 
 th {
   background-color: #3CB371; 
+  border: 4px solid #3CB371;
 }
 
 table {
@@ -19,9 +20,9 @@ table {
 }
 
 hr {
-  width: 95%;
-  margin: 10px 0;
-  border: solid 5px forestgreen;
+  width: 90%;
+  margin: 25px 0;
+  border: solid 4px forestgreen;
 }
 
 tr:nth-child(even) {
@@ -40,6 +41,15 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4) {
   text-overflow: ellipsis;
 }
 
+tr {
+  border-left: 4px solid #3CB371;
+  border-right: 4px solid #3CB371;
+}
+
+tr:last-child {
+  border-bottom: 4px solid #3CB371;
+}
+
 
 .container {
   display: flex;
@@ -47,11 +57,25 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4) {
   flex-direction: column;
   align-items: center;
   background-color: ghostwhite;
-  width: 98%;
-  top: 5%;
-  left: 1%;
-  height: 90%;
+  width: 96%;
+  margin: 40px 0;
+  left: 2%;
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+}
+
+.container div.info p {
+  padding: 5px 100px;
+  text-align: left;
+}
+
+input[type=text] {
+  background: #3CB371;
+  border: 0;
+  padding: 1px 8px;
+}
+
+input[type=text]:focus {
+  outline: none;
 }
 
 .title {
@@ -63,14 +87,14 @@ tr>th:nth-child(n+2):nth-child(-n+4), tr>td:nth-child(n+2):nth-child(-n+4) {
 
 .table {
   display: table;
-  margin: 15px 0px 15px 20px;
+  margin: 15px 0;
   font-size: 1.5em;
 }
 
 .output {
   display: table;
-  margin: 15px 0px 15px 20px;
-  width: 600px;
+  margin: 15px 0;
+  width: 750px;
 }
 
 .inputFile {
