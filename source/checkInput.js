@@ -21,7 +21,7 @@ function fileInput() {
 
 function checkInput() {
 
-  let strHTML = strError = "", log = document.getElementById("log");
+  let strHTML = "", log = document.getElementById("log");
 
   log.innerHTML = "";
 
@@ -55,6 +55,6 @@ function checkInput() {
     log.innerHTML = "<span style='color:red'>Sorry but we cannot operate, it looks like you missed: <ul>" + strHTML + "</ul></span>";
     return false;
   }
-  
+
   return true;
 }
