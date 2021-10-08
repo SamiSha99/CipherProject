@@ -11,12 +11,7 @@ function writeFile() {
 }
 
 function writeFileData() {
-  if (encryptIsPressed == true) {
-    file[f] = new File(parts, fileProp[f].name + '.enc');
-  } else {
-    file[f] = new File(parts, fileProp[f].name.substr(0, fileProp[f].name.length - 4));
-  }
-
+  file[f] = encryptIsPressed ? new File(parts, fileProp[f].name + '.enc') : new File(parts, fileProp[f].name.substr(0, fileProp[f].name.length - 4));
   fr = new FileReader();
   fr.readAsArrayBuffer(file[f]);
 }
