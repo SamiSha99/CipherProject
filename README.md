@@ -1,6 +1,6 @@
 # CipherProject
 
-Try it now at: https://samisha99.github.io/CipherProject/
+Try it now at: https://samisha99.github.io/CipherProject/ (Note: This website 100% offline, nothing is saved!)
 
 A project focuses on encrypting files with 3 different ways:
 
